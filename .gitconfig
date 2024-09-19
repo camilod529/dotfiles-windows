@@ -1,0 +1,8 @@
+[user]
+	email = camilod529@gmail.com
+	name = Camilo Duran
+
+[alias]
+	undo = reset --soft HEAD^
+[init]
+	defaultBranch = main
