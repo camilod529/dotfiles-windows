@@ -1,4 +1,5 @@
 Import-Module -Name Terminal-Icons
+Set-PsReadlineOption -PredictionViewStyle ListView
 oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/bubblesextra.omp.json" | Invoke-Expression
 # oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/tokyonight_storm.omp.json" | Invoke-Expression
 $env:VIRTUAL_ENV_DISABLE_PROMPT = 1
