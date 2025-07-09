@@ -3,6 +3,16 @@
 	name = Camilo Duran
 
 [alias]
-	undo = reset --soft HEAD^
+    undo = reset --soft HEAD^
+    rebranch = "!f() { git branch -D \"$1\" && git checkout -b \"$1\"; }; f"
+    fpush = "!f() { git push --set-upstream origin \"$1\" --force; }; f"
+    fpushme = "!git push --force --set-upstream origin $(git rev-parse --abbrev-ref HEAD)"
+    pushme = "!git push -u origin $(git rev-parse --abbrev-ref HEAD)"
+    coqa = "!b=$(git rev-parse --abbrev-ref HEAD)-qa && (git rev-parse --verify $b >/dev/null 2>&1 && git checkout $b || git checkout -b $b)"
+    costg = "!b=$(git rev-parse --abbrev-ref HEAD)-staging && (git rev-parse --verify $b >/dev/null 2>&1 && git checkout $b || git checkout -b $b)"
+    stg = checkout staging
+    qa = checkout qa
 [init]
 	defaultBranch = main
+[core]
+    editor = code --wait
